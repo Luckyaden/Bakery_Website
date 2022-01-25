@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css" type="text/css">
+    <title> Pies | Bethany's Pie Shop</title>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="pies.html">Pies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside><img src="images/logo.png" alt="Bethany's Pie Shop"></aside>
+        <article>
+      <section class= "clounmns-desktop"></section>
+      <div class = "pie">
+          <img src="images/apple-pie.png" alt="Apple Pie">
+      <div class = "columns">
+          <div class = "title"> Apple Pie</div>
+          <div class = "price"> $12.95</div>
+      </div>
+      <p class = "desc"> your famous apple pie </p>
+      <button data-order = " apple-pie"> Order</button>
+      </div>
+      <div class = "pie">
+        <img src="images/cherry-pie.png" alt="Cherry Pie">
+    <div class = "columns">
+        <div class = "title"> Cherry Pie</div>
+        <div class = "price"> $15.95</div>
+    </div>
+    <p class = "desc"> Summer classic! </p>
+    <button data-order = " cherry-pie"> Order</button>
+    </div>
+    </section>
+        </article>
+    </main>
+<footer>
+    <nav>
+        <ul>   
+            <li><a href="/">Home</a></li>
+            <li><a href="pies.html">Pies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</footer>
+</body>
+<script>
+    window.addEventListener("DoOMContentLoaded", function(e){
+        // data dash attribute ins elctior to get access to those buttons in the order
+        // use for each the anoymous fucntion wit  have access to each indivudal button as it loops through
+         orderButtons.array.forEach(function() {
+             // click handler , when we click , we want it to run javaacript
+             button.addEventListener("click", function(e){
+                 // since wr usinf data dash selctors to chosoe which pie is elctored 
+                 // we have the all information we need to dave the order inforamtion and forward to the enxt page
+                 // by looking at event arugemnt (e in the function we can reeferenc the html leemnt of button we just clciked on  )
+                 // we will be geteing the data and atrrtibvute of that bhutton, we llok a tis parent 
+                 const button = e.currentTarget;
+                 const container = button.parentNode;
+
+                 // create object literal that contains what pie we order , descirption , itel and price
+                  const order = {
+                      id: button.getAttribute ("data-order"),
+                      title: container.querySelector(",title").innerText,
+                      price: container.querySelector(".price").innerText,
+                      desc: container.querySelector(".desc").innerText
+
+                  };
+                  // save it in local staroge  wit id of order and pass the order object 
+                  // we convert it from object to string by using javascriot obejct noaton
+                  localStorage.setItem("order", JSON.stringify("order"));
+
+                  // look the cuurent location of browswer , so you need to read the  values witch pies page for order page
+
+                  const url = window.location.href.replace("pies.html", " order.html");
+                  // set the browder location ot he new url whic forwards you to the order page 
+                   window.location.href= url;
+             });
+             
+         });
+
+    })
+</script>
+</html>

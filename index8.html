@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript </title>
+</head>
+<body>
+    <!-- <script src="index.js" type= " text/javaScript">
+        // to rference an js tmepalte ^
+        // document.getElmentById(card)  get the elemnt 
+        // add or push = add new item 
+        // classlist.remove= remove attriacute from class
+        // classlist.add = add atryibuet
+       // console.log("hello from script tag!")
+
+    </script> -->
+
+    <button id= " click-me"> Click Me </button>
+
+    <script>
+        // window.addEventListener("DOMContentLoaded", function(e){
+        //     // this where the logic or code is excueted 
+        //     console.log("The page is loaded.");
+
+        //     // to get button for actionlister
+        //     // you want to selecct the elemnt on the page . to pass id  selctor to fint he elemtn
+        //     let btn=document.querySelector("#click-me")
+        //     // add event lisetn on the button ot listen to the click event 
+        //     btn.addEventListener("click", function(e) {
+        //         // to tell us the button was clicked
+        //         console.log(" the button was clicked ");
+        //     });
+
+        // });
+
+        // for moblie device , when device orienction change from desktop tomoble
+         window.addEventListener("orientationchange", function(e){
+             // look scrren object inder to get oreienction information about the device
+             let screen= window.screen;
+             // get the angels
+             let angle = screen.orientation.angle;
+             // orienation type
+             let type = screen.orientation.type;
+             console.log(`angle: ${angle}, type: ${type}`);
+
+             // on javacrip looks the mobile icon to look at the change 
+             // goes from landscrpa to portaiton view
+
+
+         });
+
+
+    </script>
+</body>
+</html>
