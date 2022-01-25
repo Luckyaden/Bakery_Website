@@ -54,9 +54,11 @@
 </footer>
 </body>
 <script>
-    window.addEventListener("DoOMContentLoaded", function(e){
+    window.addEventListener("DOMContentLoaded", function(e){
         // data dash attribute ins elctior to get access to those buttons in the order
         // use for each the anoymous fucntion wit  have access to each indivudal button as it loops through
+        const orderButtons = document.querySelectorAll("button[data-order]");
+
          orderButtons.array.forEach(function() {
              // click handler , when we click , we want it to run javaacript
              button.addEventListener("click", function(e){
@@ -77,7 +79,7 @@
                   };
                   // save it in local staroge  wit id of order and pass the order object 
                   // we convert it from object to string by using javascriot obejct noaton
-                  localStorage.setItem("order", JSON.stringify("order"));
+                  localStorage.setItem("order", JSON.stringify(order));
 
                   // look the cuurent location of browswer , so you need to read the  values witch pies page for order page
 
